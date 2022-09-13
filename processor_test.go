@@ -117,7 +117,7 @@ func TestAfterStart(t *testing.T) {
 	t.Parallel()
 	var proc, receivedProc *Processor
 	var j0, j1, receivedJob *Job
-	var receivedProcTime int
+	//var receivedProcTime int	// unused
 
 	proc = NewProcessor(simplePtg)
 	j0 = NewJob(0)
@@ -125,7 +125,7 @@ func TestAfterStart(t *testing.T) {
 	cbAfterStart := func(cbProc *Processor, cbJob *Job, cbProcTime int) {
 		receivedProc = cbProc
 		receivedJob = cbJob
-		receivedProcTime = cbProcTime
+		//receivedProcTime = cbProcTime	// assigned, but not used
 	}
 	proc.AfterStart(cbAfterStart)
 
